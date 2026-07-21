@@ -21,4 +21,4 @@ emitter.on('exit', (name) => {console.log(`System exited... ${name}`);});
 
 emitter.emit('greet', 'Ashwani');
 emitter.emit('greet', 'Mohit');
-emitter.off('exit', 'manager');
+emitter.emit('exit', 'manager'); 
