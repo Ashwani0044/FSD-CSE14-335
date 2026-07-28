@@ -1,0 +1,2 @@
+FS is easy in JS
+Trying to append new data to the existing file
