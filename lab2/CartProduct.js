@@ -4,6 +4,7 @@ import { readFile, writeFile } from "fs/promises";
 
 // Database using file starts
 const FILE = "product.json";
+const cin = readline.createInterface({ input: stdin, output: stdout });
 
 const getCart = async () => {
   const data = await readFile(FILE, "utf-8");
@@ -52,9 +53,18 @@ const updateQuantity = async (pid) => {
     const index = cart.findIndex((item) => item.id === pid);
 
     if(index !== -1) {
-        cart[index].qty -= 1;
+        const op = cin.question("Enter '+' to increase or '-' to decrease quantity: ");
+        if(op === '+') {
+            cart[index].qty += 1;
+        }
+        else {
+            cart[index].qty -= 1;
+        }
         await saveCart(cart);
-        console.log(`quantity of product ${pid} is reduced by 1`);
+        console.log(`quantity of product ${pid} is updated to ${cart[index].qty}`);
+        if(cart[index].qty == 0) {
+            removeProduct(Number(pid));
+        }
     } else {
         console.log(`Product with id ${pid} not found in the cart.`);
     }
