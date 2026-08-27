@@ -9,6 +9,10 @@ const server = http.createServer(async (req, res) => {
     } else if(req.url === "/normal") {
         const text = await readFile("big.txt");
         res.end(text);
+    } else if(req.url == "/product") {
+        res.setHeader("content-type", "text/html")
+        const data = createReadStream("product.html")
+        data.pipe(res)
     }
 });
 

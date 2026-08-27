@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ROAST & STRIKE</title>
+    <style>
+        :root {
+            --bg-dark: #1b1411;
+            --card-bg: #281e19;
+            --accent-gold: #d4a373;
+            --accent-cream: #faedcd;
+            --text-main: #fefae0;
+            --text-muted: #b09e90;
+            --border-color: #3d2e24;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.4rem; font-weight: 900; color: var(--accent-cream); text-decoration: none; }
+        .logo span { color: var(--accent-gold); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+
+        .about-wrapper {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+        .about-wrapper h1 { font-size: 2.4rem; color: var(--accent-cream); margin-bottom: 1.5rem; }
+        .about-wrapper h2 { color: var(--accent-gold); margin: 2rem 0 0.8rem; font-size: 1.3rem; }
+        .about-wrapper p { color: var(--text-muted); line-height: 1.7; font-size: 1rem; margin-bottom: 1rem; }
+
+        .footer { background-color: var(--card-bg); border-top: 1px solid var(--border-color); padding: 2rem; text-align: center; margin-top: auto; }
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">ROAST<span>&</span>STRIKE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="about-wrapper">
+        <h1>OUR CRAFT & HERITAGE</h1>
+        <p>Founded on the principle of combining dark-timber aesthetics with top-tier sports engineering, ROAST & STRIKE delivers professional-grade cricket equipment crafted for modern power hitters.</p>
+
+        <h2>NURTURED WILLOW</h2>
+        <p>Every bat is hand-pressed from naturally dried Grade 1+ English Willow clefts, ensuring dense grain profiles, optimum power distribution, and signature feather-light pickups.</p>
+
+        <h2>THE MOCHA DESIGN LANGUAGE</h2>
+        <p>Inspired by rich espresso tones and natural wood grains, our signature color scheme reflects warmth, strength, and timeless artisanal quality.</p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 ROAST & STRIKE Co. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

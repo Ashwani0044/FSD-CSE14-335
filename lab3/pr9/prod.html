@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Collection | ROAST & STRIKE</title>
+    <style>
+        :root {
+            --bg-dark: #1b1411;
+            --card-bg: #281e19;
+            --accent-gold: #d4a373;
+            --accent-cream: #faedcd;
+            --text-main: #fefae0;
+            --text-muted: #b09e90;
+            --border-color: #3d2e24;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.4rem; font-weight: 900; color: var(--accent-cream); text-decoration: none; }
+        .logo span { color: var(--accent-gold); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+
+        .container { max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; width: 100%; }
+        .page-title { font-size: 2.2rem; color: var(--accent-cream); margin-bottom: 2rem; text-align: center; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .img-container {
+            background: radial-gradient(circle at center, #352720 0%, #1b1411 100%);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .img-container img {
+            max-height: 220px;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
+
+        .info { padding: 1.5rem; }
+        .info h3 { font-size: 1.2rem; color: var(--accent-cream); margin-bottom: 0.4rem; }
+        .info .category { font-size: 0.75rem; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.8rem; }
+        .info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 1.2rem; }
+        
+        .bottom-bar { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 1.3rem; font-weight: 800; color: var(--accent-gold); }
+        
+        .btn-add {
+            background: linear-gradient(135deg, var(--accent-gold), #bc8a5f);
+            color: #1b1411;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .footer { background-color: var(--card-bg); border-top: 1px solid var(--border-color); padding: 2rem; text-align: center; margin-top: auto; }
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">ROAST<span>&</span>STRIKE</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html" class="active">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">CHAMPIONSHIP COLLECTION</h1>
+
+        <div class="product-grid">
+            <!-- Item 1 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://www.cielsports.in/cdn/shop/files/striker-edition-grade-1-english-willow-bat-all-views-side-back-front.png" alt="Mocha Striker Bat">
+                </div>
+                <div class="info">
+                    <div class="category">Cricket Bat</div>
+                    <h3>Mocha Striker Pro</h3>
+                    <p>Grade 1+ English Willow bat with espresso chevron octagonal handle.</p>
+                    <div class="bottom-bar">
+                        <span class="price">$549</span>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500&q=80" alt="Leather Ball">
+                </div>
+                <div class="info">
+                    <div class="category">Ball</div>
+                    <h3>Espresso Match Ball</h3>
+                    <p>Hand-stitched 4-piece leather ball built for top-tier pitch longevity.</p>
+                    <div class="bottom-bar">
+                        <span class="price">$39</span>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500&q=80" alt="Batting Gloves">
+                </div>
+                <div class="info">
+                    <div class="category">Protection</div>
+                    <h3>Mocha Armor Gloves</h3>
+                    <p>Split-finger sheepskin leather gloves with reinforced index protection.</p>
+                    <div class="bottom-bar">
+                        <span class="price">$89</span>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 ROAST & STRIKE Co. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

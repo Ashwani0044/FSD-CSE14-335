@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAST & STRIKE | Reserve Edition Cricket Bat</title>
+    <style>
+        :root {
+            --bg-dark: #5f4f48;       /* Dark Espresso */
+            --card-bg: #281e19;      /* Dark Roasted Coffee */
+            --accent-gold: #d4a373;  /* Warm Caramel / Latte Accent */
+            --accent-cream: #faedcd; /* Light Cream */
+            --text-main: #fefae0;    /* Warm Off-White */
+            --text-muted: #b09e90;   /* Muted Mocha */
+            --border-color: #3d2e24; /* Roasted Bean Border */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Header Styles --- */
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent-cream);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Main Layout --- */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(212, 163, 115, 0.08);
+            display: grid;
+            grid-template-columns: 1fr;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                grid-template-columns: 1.1fr 1fr;
+            }
+        }
+
+        /* Product Gallery Visuals */
+        .product-visual {
+            position: relative;
+            background: radial-gradient(circle at center, #352720 0%, #1b1411 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            min-height: 480px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: linear-gradient(135deg, var(--accent-gold), #bc8a5f);
+            color: #1b1411;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .bat-img {
+            max-width: 85%;
+            height: auto;
+            max-height: 420px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+            transition: transform 0.4s ease;
+        }
+
+        .product-visual:hover .bat-img {
+            transform: scale(1.04) rotate(-1deg);
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: var(--accent-gold);
+            opacity: 0.12;
+            filter: blur(90px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Product Info */
+        .product-details {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: var(--accent-cream);
+        }
+
+        .subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .feature-card strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--accent-cream);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #bc8a5f);
+            color: #1b1411;
+            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.25);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 163, 115, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-cream);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 163, 115, 0.08);
+            border-color: var(--accent-gold);
+        }
+
+        /* --- Footer Styles --- */
+        .footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="#" class="logo">ROAST<span>&</span>STRIKE</a>
+        <ul class="nav-links">
+            <li><a href="#">Bats</a></li>
+            <li><a href="#">Gear</a></li>
+            <li><a href="#">Custom Crafting</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+        <div class="container">
+            <!-- Visual Section with Real Bat Image -->
+            <div class="product-visual">
+                <span class="badge">Grade 1+ English Willow</span>
+                <div class="glow-effect"></div>
+                
+                <img 
+                    src="https://www.cielsports.in/cdn/shop/files/striker-edition-grade-1-english-willow-bat-all-views-side-back-front.png" 
+                    alt="Grade 1 English Willow Cricket Bat" 
+                    class="bat-img"
+                />
+            </div>
+
+            <!-- Details Section -->
+            <div class="product-details">
+                <div>
+                    <div class="header">
+                        <h1>MOCHA STRIKER PRO</h1>
+                        <div class="subtitle">Mocha & Wood Edition • Handcrafted</div>
+                    </div>
+
+                    <div class="price-container">
+                        <span class="price">$549</span>
+                        <span class="original-price">$720</span>
+                    </div>
+
+                    <p class="description">
+                        Hand-pressed from naturally seasoned Grade 1+ English Willow. Featuring a rich wood finish with mocha-tinted grip ergonomics, engineered for maximum power pick-up and balance.
+                    </p>
+
+                    <div class="features">
+                        <div class="feature-card">
+                            <strong>Wood Profile</strong>
+                            <span>Pro-Reserve English Willow</span>
+                        </div>
+                        <div class="feature-card">
+                            <strong>Weight</strong>
+                            <span>2lb 7oz - 2lb 9oz</span>
+                        </div>
+                        <div class="feature-card">
+                            <strong>Sweet Spot</strong>
+                            <span>Extended Mid-Blade</span>
+                        </div>
+                        <div class="feature-card">
+                            <strong>Grip Type</strong>
+                            <span>Espresso Chevron Octagonal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-secondary">Customize Weight</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">Warranty Info</a></li>
+                <li><a href="#">Care Guide</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 ROAST & STRIKE Co. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

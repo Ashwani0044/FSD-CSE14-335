@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAST & STRIKE | Elite Handcrafted Cricket Gear</title>
+    <style>
+        :root {
+            --bg-dark: #1b1411;       /* Dark Espresso */
+            --card-bg: #281e19;      /* Dark Roasted Coffee */
+            --accent-gold: #d4a373;  /* Warm Caramel / Latte Accent */
+            --accent-cream: #faedcd; /* Light Cream */
+            --text-main: #fefae0;    /* Warm Off-White */
+            --text-muted: #b09e90;   /* Muted Mocha */
+            --border-color: #3d2e24; /* Roasted Bean Border */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent-cream);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent-gold); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 6rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, #352720 0%, #1b1411 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--accent-cream);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #bc8a5f);
+            color: #1b1411;
+            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.25);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        /* Categories Section */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-cream);
+            margin: 4rem 0 2rem;
+        }
+
+        .categories-grid {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .category-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p { color: var(--text-muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">ROAST<span>&</span>STRIKE</a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <h1>POWER MEETS PRECISION</h1>
+        <p>Hand-pressed Grade 1+ English Willow bats crafted with rich mocha aesthetic finishes for players who demand unyielding performance.</p>
+        <a href="product.html" class="btn btn-primary">Explore Collection</a>
+    </section>
+
+    <h2 class="section-title">EQUIPMENT CATEGORIES</h2>
+
+    <div class="categories-grid">
+        <div class="category-card">
+            <h3>Pro Bats</h3>
+            <p>Naturally seasoned Grade 1+ Willow with custom-curated spine profiles and responsive pick-up balance.</p>
+        </div>
+        <div class="category-card">
+            <h3>Leather Armor</h3>
+            <p>Ultra-lightweight multi-density foam batting pads and high-flex split-finger gloves.</p>
+        </div>
+        <div class="category-card">
+            <h3>Leather Balls</h3>
+            <p>Four-piece alum-tanned leather balls crafted for professional multi-day match standards.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 ROAST & STRIKE Co. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
