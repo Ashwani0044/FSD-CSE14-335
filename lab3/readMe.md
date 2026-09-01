@@ -27,3 +27,12 @@ Any API can be of 4 types:
 API can be respond by server with status code and json data
 API generally start with API/version(eg. /api/v1/products/2)
 By default browser can check only GET request, to check other three request types like post, put/patch and delete we require frontend or third party api tester like postman, thunder client, eco api
+
+
+# content-type
+
+1. text/js
+2. text/css
+3. text/html
+4. text/plain
+5. application/json
