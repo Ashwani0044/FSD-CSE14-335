@@ -1,0 +1,222 @@
+[
+    {
+      "id": 1,
+      "brand": "Apple",
+      "model": "iPhone 15 Pro",
+      "display": {
+        "size_inches": 6.1,
+        "panel": "Super Retina XDR OLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Apple A17 Pro",
+      "ram_gb": 8,
+      "storage_gb": 256,
+      "battery_capacity_mah": 3274,
+      "cameras": {
+        "main_mp": 48,
+        "ultrawide_mp": 12,
+        "telephoto_mp": 12,
+        "front_mp": 12
+      },
+      "operating_system": "iOS 17",
+      "price_usd": 999
+    },
+    {
+      "id": 2,
+      "brand": "Samsung",
+      "model": "Galaxy S24 Ultra",
+      "display": {
+        "size_inches": 6.8,
+        "panel": "Dynamic LTPO AMOLED 2X",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 12,
+      "storage_gb": 512,
+      "battery_capacity_mah": 5000,
+      "cameras": {
+        "main_mp": 200,
+        "ultrawide_mp": 12,
+        "telephoto_mp": 50,
+        "front_mp": 12
+      },
+      "operating_system": "Android 14",
+      "price_usd": 1299
+    },
+    {
+      "id": 3,
+      "brand": "Google",
+      "model": "Pixel 8 Pro",
+      "display": {
+        "size_inches": 6.7,
+        "panel": "LTPO OLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Google Tensor G3",
+      "ram_gb": 12,
+      "storage_gb": 128,
+      "battery_capacity_mah": 5050,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 48,
+        "telephoto_mp": 48,
+        "front_mp": 10.5
+      },
+      "operating_system": "Android 14",
+      "price_usd": 999
+    },
+    {
+      "id": 4,
+      "brand": "OnePlus",
+      "model": "OnePlus 12",
+      "display": {
+        "size_inches": 6.82,
+        "panel": "LTPO AMOLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "battery_capacity_mah": 5400,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 48,
+        "telephoto_mp": 64,
+        "front_mp": 32
+      },
+      "operating_system": "Android 14",
+      "price_usd": 799
+    },
+    {
+      "id": 5,
+      "brand": "Xiaomi",
+      "model": "Xiaomi 14 Ultra",
+      "display": {
+        "size_inches": 6.73,
+        "panel": "LTPO AMOLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "battery_capacity_mah": 5000,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 50,
+        "telephoto_mp": 50,
+        "front_mp": 32
+      },
+      "operating_system": "Android 14",
+      "price_usd": 1499
+    },
+    {
+      "id": 6,
+      "brand": "Sony",
+      "model": "Xperia 1 VI",
+      "display": {
+        "size_inches": 6.5,
+        "panel": "LTPO OLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 12,
+      "storage_gb": 256,
+      "battery_capacity_mah": 5000,
+      "cameras": {
+        "main_mp": 48,
+        "ultrawide_mp": 12,
+        "telephoto_mp": 12,
+        "front_mp": 12
+      },
+      "operating_system": "Android 14",
+      "price_usd": 1399
+    },
+    {
+      "id": 7,
+      "brand": "Asus",
+      "model": "ROG Phone 8 Pro",
+      "display": {
+        "size_inches": 6.78,
+        "panel": "LTPO AMOLED",
+        "refresh_rate_hz": 165
+      },
+      "processor": "Snapdragon 8 Gen 3",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "battery_capacity_mah": 5500,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 13,
+        "telephoto_mp": 32,
+        "front_mp": 32
+      },
+      "operating_system": "Android 14",
+      "price_usd": 1199
+    },
+    {
+      "id": 8,
+      "brand": "Motorola",
+      "model": "Edge 50 Ultra",
+      "display": {
+        "size_inches": 6.7,
+        "panel": "P-OLED",
+        "refresh_rate_hz": 144
+      },
+      "processor": "Snapdragon 8s Gen 3",
+      "ram_gb": 16,
+      "storage_gb": 1000,
+      "battery_capacity_mah": 4500,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 50,
+        "telephoto_mp": 64,
+        "front_mp": 50
+      },
+      "operating_system": "Android 14",
+      "price_usd": 999
+    },
+    {
+      "id": 9,
+      "brand": "Nothing",
+      "model": "Phone (2)",
+      "display": {
+        "size_inches": 6.7,
+        "panel": "LTPO OLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "Snapdragon 8+ Gen 1",
+      "ram_gb": 12,
+      "storage_gb": 256,
+      "battery_capacity_mah": 4700,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 50,
+        "telephoto_mp": null,
+        "front_mp": 32
+      },
+      "operating_system": "Android 13",
+      "price_usd": 699
+    },
+    {
+      "id": 10,
+      "brand": "Vivo",
+      "model": "X100 Pro",
+      "display": {
+        "size_inches": 6.78,
+        "panel": "LTPO AMOLED",
+        "refresh_rate_hz": 120
+      },
+      "processor": "MediaTek Dimensity 9300",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "battery_capacity_mah": 5400,
+      "cameras": {
+        "main_mp": 50,
+        "ultrawide_mp": 50,
+        "telephoto_mp": 50,
+        "front_mp": 32
+      },
+      "operating_system": "Android 14",
+      "price_usd": 1199
+    }
+  ]

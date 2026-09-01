@@ -5,19 +5,19 @@ import { readFile } from 'fs/promises';
 const server = http.createServer(async (req, res) => {
     if(req.url === "/") {
         res.setHeader("content-type", "text/html")
-        const data = createReadStream("pr9/home.html")
+        const data = createReadStream("pages/home.html")
         data.pipe(res)
     } else if(req.url === "/aboutus") {
         res.setHeader("content-type", "text/html")
-        const data = createReadStream("pr9/about.html")
+        const data = createReadStream("pages/about.html")
         data.pipe(res)
     } else if(req.url == "/product") {
         res.setHeader("content-type", "text/html")
-        const data = createReadStream("pr9/prod.html")
+        const data = createReadStream("pages/prod.html")
         data.pipe(res)
     } else if(req.url == "/contact") {
         res.setHeader("content-type", "text/html")
-        const data = createReadStream("pr9/contact.html")
+        const data = createReadStream("pages/contact.html")
         data.pipe(res)
     }
 });

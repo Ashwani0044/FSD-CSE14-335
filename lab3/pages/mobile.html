@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flagship Smartphones 2024</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f5f5f7;
+      --text-sub: #86868b;
+      --accent-blue: #2997ff;
+      --accent-green: #30d158;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 40px 8%;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-sub);
+      font-size: 1.1rem;
+    }
+
+    /* Controls Bar */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+      background: var(--card-bg);
+      padding: 16px 24px;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(20px);
+    }
+
+    .controls input, .controls select {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 10px 16px;
+      border-radius: 10px;
+      outline: none;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .controls input:focus, .controls select:focus {
+      border-color: var(--accent-blue);
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* Phone Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .card-header {
+      margin-bottom: 16px;
+    }
+
+    .brand {
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .model {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .specs-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+
+    .specs-preview span {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-green);
+    }
+
+    .btn-details {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: background 0.2s ease;
+    }
+
+    .card:hover .btn-details {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(15px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: #161617;
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 32px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal {
+      transform: scale(1);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .modal-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    .modal-item label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .modal-item value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Flagship Mobile Lineup</h1>
+    <p>Compare specifications, hardware specs, and pricing.</p>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search brand or model...">
+    <select id="sort">
+      <option value="default">Sort By: Featured</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="ram-desc">RAM: Highest First</option>
+    </select>
+  </div>
+
+  <div class="grid" id="product-grid"></div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" id="close-modal">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const phones = [
+      { id: 1, brand: "Apple", model: "iPhone 15 Pro", display: { size_inches: 6.1, panel: "Super Retina XDR OLED", refresh_rate_hz: 120 }, processor: "Apple A17 Pro", ram_gb: 8, storage_gb: 256, battery_capacity_mah: 3274, cameras: { main_mp: 48, ultrawide_mp: 12, telephoto_mp: 12, front_mp: 12 }, operating_system: "iOS 17", price_usd: 999 },
+      { id: 2, brand: "Samsung", model: "Galaxy S24 Ultra", display: { size_inches: 6.8, panel: "Dynamic LTPO AMOLED 2X", refresh_rate_hz: 120 }, processor: "Snapdragon 8 Gen 3", ram_gb: 12, storage_gb: 512, battery_capacity_mah: 5000, cameras: { main_mp: 200, ultrawide_mp: 12, telephoto_mp: 50, front_mp: 12 }, operating_system: "Android 14", price_usd: 1299 },
+      { id: 3, brand: "Google", model: "Pixel 8 Pro", display: { size_inches: 6.7, panel: "LTPO OLED", refresh_rate_hz: 120 }, processor: "Google Tensor G3", ram_gb: 12, storage_gb: 128, battery_capacity_mah: 5050, cameras: { main_mp: 50, ultrawide_mp: 48, telephoto_mp: 48, front_mp: 10.5 }, operating_system: "Android 14", price_usd: 999 },
+      { id: 4, brand: "OnePlus", model: "OnePlus 12", display: { size_inches: 6.82, panel: "LTPO AMOLED", refresh_rate_hz: 120 }, processor: "Snapdragon 8 Gen 3", ram_gb: 16, storage_gb: 512, battery_capacity_mah: 5400, cameras: { main_mp: 50, ultrawide_mp: 48, telephoto_mp: 64, front_mp: 32 }, operating_system: "Android 14", price_usd: 799 },
+      { id: 5, brand: "Xiaomi", model: "Xiaomi 14 Ultra", display: { size_inches: 6.73, panel: "LTPO AMOLED", refresh_rate_hz: 120 }, processor: "Snapdragon 8 Gen 3", ram_gb: 16, storage_gb: 512, battery_capacity_mah: 5000, cameras: { main_mp: 50, ultrawide_mp: 50, telephoto_mp: 50, front_mp: 32 }, operating_system: "Android 14", price_usd: 1499 },
+      { id: 6, brand: "Sony", model: "Xperia 1 VI", display: { size_inches: 6.5, panel: "LTPO OLED", refresh_rate_hz: 120 }, processor: "Snapdragon 8 Gen 3", ram_gb: 12, storage_gb: 256, battery_capacity_mah: 5000, cameras: { main_mp: 48, ultrawide_mp: 12, telephoto_mp: 12, front_mp: 12 }, operating_system: "Android 14", price_usd: 1399 },
+      { id: 7, brand: "Asus", model: "ROG Phone 8 Pro", display: { size_inches: 6.78, panel: "LTPO AMOLED", refresh_rate_hz: 165 }, processor: "Snapdragon 8 Gen 3", ram_gb: 16, storage_gb: 512, battery_capacity_mah: 5500, cameras: { main_mp: 50, ultrawide_mp: 13, telephoto_mp: 32, front_mp: 32 }, operating_system: "Android 14", price_usd: 1199 },
+      { id: 8, brand: "Motorola", model: "Edge 50 Ultra", display: { size_inches: 6.7, panel: "P-OLED", refresh_rate_hz: 144 }, processor: "Snapdragon 8s Gen 3", ram_gb: 16, storage_gb: 1000, battery_capacity_mah: 4500, cameras: { main_mp: 50, ultrawide_mp: 50, telephoto_mp: 64, front_mp: 50 }, operating_system: "Android 14", price_usd: 999 },
+      { id: 9, brand: "Nothing", model: "Phone (2)", display: { size_inches: 6.7, panel: "LTPO OLED", refresh_rate_hz: 120 }, processor: "Snapdragon 8+ Gen 1", ram_gb: 12, storage_gb: 256, battery_capacity_mah: 4700, cameras: { main_mp: 50, ultrawide_mp: 50, telephoto_mp: "N/A", front_mp: 32 }, operating_system: "Android 13", price_usd: 699 },
+      { id: 10, brand: "Vivo", model: "X100 Pro", display: { size_inches: 6.78, panel: "LTPO AMOLED", refresh_rate_hz: 120 }, processor: "MediaTek Dimensity 9300", ram_gb: 16, storage_gb: 512, battery_capacity_mah: 5400, cameras: { main_mp: 50, ultrawide_mp: 50, telephoto_mp: 50, front_mp: 32 }, operating_system: "Android 14", price_usd: 1199 }
+    ];
+
+    const grid = document.getElementById('product-grid');
+    const searchInput = document.getElementById('search');
+    const sortSelect = document.getElementById('sort');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalContent = document.getElementById('modal-content');
+    const closeModal = document.getElementById('close-modal');
+
+    function renderCards(data) {
+      grid.innerHTML = data.map(phone => `
+        <div class="card" onclick="openModal(${phone.id})">
+          <div class="card-header">
+            <span class="brand">${phone.brand}</span>
+            <h2 class="model">${phone.model}</h2>
+          </div>
+          <div class="specs-preview">
+            <span><strong>Chip:</strong> ${phone.processor}</span>
+            <span><strong>RAM / Storage:</strong> ${phone.ram_gb}GB / ${phone.storage_gb >= 1000 ? '1TB' : phone.storage_gb + 'GB'}</span>
+            <span><strong>Screen:</strong> ${phone.display.size_inches}" (${phone.display.refresh_rate_hz}Hz)</span>
+          </div>
+          <div class="card-footer">
+            <span class="price">$${phone.price_usd}</span>
+            <button class="btn-details">View Specs</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openModal(id) {
+      const phone = phones.find(p => p.id === id);
+      modalContent.innerHTML = `
+        <div class="brand">${phone.brand}</div>
+        <h2 class="modal-title">${phone.model}</h2>
+        <div class="modal-grid">
+          <div class="modal-item"><label>Processor</label><value>${phone.processor}</value></div>
+          <div class="modal-item"><label>OS</label><value>${phone.operating_system}</value></div>
+          <div class="modal-item"><label>RAM</label><value>${phone.ram_gb} GB</value></div>
+          <div class="modal-item"><label>Storage</label><value>${phone.storage_gb >= 1000 ? '1 TB' : phone.storage_gb + ' GB'}</value></div>
+          <div class="modal-item"><label>Display</label><value>${phone.display.size_inches}" ${phone.display.panel}</value></div>
+          <div class="modal-item"><label>Refresh Rate</label><value>${phone.display.refresh_rate_hz} Hz</value></div>
+          <div class="modal-item"><label>Main Camera</label><value>${phone.cameras.main_mp} MP</value></div>
+          <div class="modal-item"><label>Telephoto</label><value>${phone.cameras.telephoto_mp ? phone.cameras.telephoto_mp + ' MP' : 'N/A'}</value></div>
+          <div class="modal-item"><label>Battery</label><value>${phone.battery_capacity_mah} mAh</value></div>
+          <div class="modal-item"><label>Price</label><value style="color:var(--accent-green);">$${phone.price_usd}</value></div>
+        </div>
+      `;
+      modalOverlay.classList.add('active');
+    }
+
+    closeModal.addEventListener('click', () => modalOverlay.classList.remove('active'));
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) modalOverlay.classList.remove('active');
+    });
+
+    function filterAndSort() {
+      let filtered = phones.filter(p => 
+        p.brand.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+        p.model.toLowerCase().includes(searchInput.value.toLowerCase())
+      );
+
+      const sortVal = sortSelect.value;
+      if (sortVal === 'price-asc') filtered.sort((a, b) => a.price_usd - b.price_usd);
+      if (sortVal === 'price-desc') filtered.sort((a, b) => b.price_usd - a.price_usd);
+      if (sortVal === 'ram-desc') filtered.sort((a, b) => b.ram_gb - a.ram_gb);
+
+      renderCards(filtered);
+    }
+
+    searchInput.addEventListener('input', filterAndSort);
+    sortSelect.addEventListener('change', filterAndSort);
+
+    // Initial Render
+    renderCards(phones);
+  </script>
+</body>
+</html>
